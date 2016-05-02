@@ -56,7 +56,7 @@
 }
 
 body {
-  background: black;
+  background: #1a1a1a;
 }
 
 slides > slide {
@@ -73,31 +73,21 @@ slides > slide {
   padding: $slide-top-bottom-padding $slide-left-right-padding;
 
   @include border-radius($slide-border-radius);
-  //@include box-shadow(5px 5px 20px $gray-4);
-  @include transition(all 0.6s ease-in-out);
+  @include transition(all 0.3s ease-in-out);
 
-  //$translateX: 1020px;
-  //$rotateY: 30deg;
-  //$rotateX: 45deg;
+
 
   &.far-past {
-    //display: block;
     display: none;
-    //@include transform(translate(-$translateX * 2));
-    //@include transform(translate3d(-$translateX * 2, 0, 0));
   }
 
   &.past {
     display: block;
-    //@include transform(translate(-$translateX) rotateY($rotateY) rotateX($rotateX));
-    //@include transform(translate3d(-$translateX, 0, 0) rotateY($rotateY) rotateX($rotateX));
     opacity: 0;
   }
 
   &.current {
     display: block;
-    //@include transform(translate(0));
-    //@include transform(translate3d(0, 0, 0));
     opacity: 1;
 
     .auto-fadein {
@@ -111,26 +101,20 @@ slides > slide {
 
   &.next {
     display: block;
-    //@include transform(translate($translateX) rotateY(-$rotateY) rotateX($rotateX));
-    //@include transform(translate3d($translateX, 0, 0) rotateY(-$rotateY) rotateX($rotateX));
     opacity: 0;
     pointer-events: none;
+
   }
 
   &.far-next {
-    //display: block;
     display: none;
-    //@include transform(translate($translateX * 2));
-    //@include transform(translate3d($translateX * 2, 0, 0));
   }
 
   &.dark {
-    background: $gray-4 !important;
+    background: $brand-secondary !important;
   }
 
   &:not(.nobackground) {
-    //background: white url(../../images/google_developers_icon_128.png) ($brand-small-icon-size * 2) 98% no-repeat;
-    //@include background-size($brand-small-icon-size $brand-small-icon-size);
 
     &:before {
       font-size: 12pt;
@@ -157,8 +141,6 @@ slides > slide {
   &.title-slide {
     &:after {
       content: '';
-      //background: url(../../images/io2012_logo.png) no-repeat 100% 50%;
-      //@include background-size(contain);
       position: absolute;
       bottom: $slide-top-bottom-padding;
       right: $slide-top-bottom-padding;
@@ -223,22 +205,16 @@ slides.layout-faux-widescreen {
 
   > slide.past {
     display: block;
-    //@include transform(translate(-$translateX));
-    //@include transform(translate3d(-$translateX, 0, 0));
     opacity: 0;
   }
 
   > slide.current {
     display: block;
-    //@include transform(translate(0));
-    //@include transform(translate3d(0, 0, 0));
     opacity: 1;
   }
 
   > slide.next {
     display: block;
-    //@include transform(translate($translateX));
-    //@include transform(translate3d($translateX, 0, 0));
     opacity: 0;
     pointer-events: none;
   }
@@ -327,7 +303,7 @@ ul {
 .highlight-code slide.current {
   pre > * {
     opacity: 0.25;
-    @include transition(opacity 0.5s ease-in);
+    @include transition(opacity 0.3s ease-in);
   }
   b {
     opacity: 1;
@@ -561,7 +537,7 @@ article.smaller {
 
 .build {
   > * {
-    @include transition(opacity 0.5s ease-in-out 0.2s);
+    @include transition(opacity 0.3s ease-in-out 0.2s);
   }
 
   .to-build {
@@ -677,8 +653,8 @@ article.smaller {
 
       &.backdrop {
         //@include background(linear-gradient($gray-1, white 30%, white 60%, $gray-1));
-        @include background-image(radial-gradient(50% 50%, #b1dfff 0%,
-                                                  $brand-blue 600px));
+        @include background-image(radial-gradient(50% 50%, $brand-secondary 0%,
+                                                  darken($brand-secondary, 5%) 600px));
       }
 
       &.next {
@@ -700,7 +676,7 @@ article.smaller {
       @include box-shadow(0 0 10px $gray-3);
 
       @include transform(translate3d(250px, $slide-height + 100, 0) scale(1.5));
-      @include transition(opacity 400ms ease-in-out);
+      @include transition(opacity 0.4s ease-in-out);
 
       > section {
         background: #fff;
@@ -765,7 +741,7 @@ article.smaller {
 }
 
 .auto-fadein {
-  @include transition(opacity 0.6s ease-in 1s);
+  @include transition(opacity 0.3s ease-in 0.3s);
   opacity: 0;
 }
 
@@ -824,8 +800,8 @@ article.smaller {
 }
 
 .thank-you-slide {
-  background: $brand-blue !important;
-  color: white;
+  background: $brand-primary !important;
+  color: $brand-secondary;
 
   h2 {
     font-size: 60px;
@@ -852,9 +828,9 @@ aside.gdbar {
   left: -1px;
   top: 125px;
   @include border-radius(0 10px 10px 0);
-  @include background(linear-gradient(left, $gray-1, $gray-1) no-repeat);
+  @include background(linear-gradient(left, $brand-primary, $brand-primary) no-repeat);
   @include background-size(0% 100%);
-  @include transition(all 0.5s ease-out 0.5s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
+  @include transition(all 0.3s ease-out 0.3s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 
   &.right {
     right: 0;
@@ -874,9 +850,11 @@ aside.gdbar {
     bottom: $slide-left-right-padding;
   }
 
-  img {
+  div {
     width: 85px;
     height: 85px;
+    font-size: 75px;
+    line-height: 75px;
     position: absolute;
     right: 0;
     margin: 8px 15px;
@@ -892,7 +870,7 @@ aside.gdbar {
       font-size: 65px;
       line-height: 1.4;
       letter-spacing: -3px;
-      color: $gray-4;
+      color: $gray-1;
     }
 
     h2 {
@@ -1045,3 +1023,13 @@ aside.gdbar {
     font-family: monospace !important;
   }
 }
+
+
+
+
+
+.popup .next .auto-fadein {
+  opacity: 1;
+}
+
+
