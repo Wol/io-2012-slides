@@ -832,6 +832,7 @@ aside.gdbar {
   @include background-size(0% 100%);
   @include transition(all 0.3s ease-out 0.3s); /* Better to transition only on background-size, but not sure how to do that with the mixin. */
 
+  color: #222;
   &.right {
     right: 0;
     left: -moz-initial;

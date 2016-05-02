@@ -3,10 +3,10 @@ var SLIDE_CONFIG = {
   settings: {
     title: 'Simmering Malevolence',
     subtitle: 'A selection of ramblings from a developer',
-    //eventInfo: {
-    //  title: 'Google I/O',
-    //  date: '6/x/2013'
-    //},
+    eventInfo: {
+     title: 'Knowledge Share',
+     date: '11/5/2016'
+    },
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.

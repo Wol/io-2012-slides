@@ -8,6 +8,7 @@ class: image
 
 title: Segue Slide
 subtitle: Subtitle
+number: 1
 class: segue dark nobackground
 
 ---
