@@ -16,6 +16,7 @@ class: segue dark nobackground
 title: Agenda
 class: big
 build_lists: true
+notes: Mention This. And this. And this.
 
 Things we'll cover (list should build):
 
@@ -31,6 +32,13 @@ class: nobackground fill
 ![Many kinds of devices.](image.png)
 
 <footer class="source">source: place source info here</footer>
+
+---
+
+title: Segue Slide
+subtitle: Subtitle
+number: 1
+class: segue dark nobackground
 
 ---
 

@@ -24,6 +24,15 @@
 
 {% for slide in slides %}
 <slide {% if slide.class %}class="{{- slide.class -}}"{% endif %} {% if slide.image %}style="background-image: url({{- slide.image -}})"{% endif %}>
+
+  {% if slide.notes %}
+  <aside class="note">
+    <section>
+      {{- '<br/>'.join(slide.notes.split('.')) -}}
+    </section>
+  </aside>
+  {% endif %}
+
   {% if 'segue' in slide.class %}
     <aside class="gdbar"><div>{{- slide.number -}}</div></aside>
     <hgroup class="auto-fadein">
